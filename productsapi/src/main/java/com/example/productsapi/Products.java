@@ -2,14 +2,23 @@ package com.example.productsapi;
 
 public class Products {
   private String name;
-  private int quantity;
+  private String quantity;
   private String description;
+  private static Products instance;
 
-  //   Products(String name, int quantity, String description) {
-  //     this.name = name;
-  //     this.quantity = quantity;
-  //     this.description = description;
-  //   }
+  public static final Products getInstance() {
+    if (instance == null) instance = new Products();
+    return instance;
+  }
+
+  Products() {}
+
+  Products(String name, String quantity, String description) {
+    this.name = name;
+    this.quantity = quantity;
+    this.description = description;
+  }
+
   public String getName() {
     return name;
   }
@@ -18,11 +27,11 @@ public class Products {
     this.name = name;
   }
 
-  public int getQuantity() {
+  public String getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(int quantity) {
+  public void setQuantity(String quantity) {
     this.quantity = quantity;
   }
 
