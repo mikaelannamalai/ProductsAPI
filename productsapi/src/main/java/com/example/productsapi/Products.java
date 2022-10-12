@@ -1,10 +1,14 @@
 package com.example.productsapi;
 
+import java.util.ArrayList;
+
 public class Products {
   private String name;
   private String quantity;
   private String description;
   private static Products instance;
+  private String save;
+  ArrayList<Products> productsList = new ArrayList<Products>();
 
   public static final Products getInstance() {
     if (instance == null) instance = new Products();
@@ -17,6 +21,17 @@ public class Products {
     this.name = name;
     this.quantity = quantity;
     this.description = description;
+  }
+
+  public String save(Products prod) {
+    productsList.add(prod);
+    String result =
+      prod.getName() +
+      " , " +
+      prod.getQuantity() +
+      " , " +
+      prod.getDescription();
+    return result;
   }
 
   public String getName() {
