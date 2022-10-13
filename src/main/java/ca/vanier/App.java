@@ -12,7 +12,7 @@ public class App {
       String name = args[0];
       String quantity = args[1];
       String description = args[2];
-      System.out.println("test");
+
       System.out.println(ProdManager.create(name, quantity, description));
 
       System.out.println(args[3]);
