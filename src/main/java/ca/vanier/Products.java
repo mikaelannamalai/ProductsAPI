@@ -50,8 +50,6 @@ public class Products {
       quantity +
       ", description=" +
       description +
-      ", productsList=" +
-      productsList +
       "]"
     );
   }
